@@ -1,3 +1,19 @@
+v=5
+tupla = ("Alberto", v, 65.8, 12)
+lista = [
+    ["Alberto", "Javier", "Dani", "Jorge", "Manuel1", "Miguel", "Alberto", "Javier", "Dani", "Jorge", "Manuel", "Miguel", "Alberto", "Javier", "Dani", "Jorge", "Manuel", "Miguel"], # 0
+    ["Alberto", "Javier", "Dani", "Jorge", "Manuel2", "Miguel", "Alberto", "Javier", "Dani", "Jorge", "Manuel", "Miguel", "Alberto", "Javier", "Dani", "Jorge", "Manuel", "Miguel"], # 1
+    ["Alberto", "Javier", "Dani", "Jorge", "Manuel3", "Miguel", "Alberto", "Javier", "Dani", "Jorge", "Manuel", "Miguel", "Alberto", "Javier", "Dani", "Jorge", "Manuel", "Miguel"], # 2
+    ["Alberto", "Javier", "Dani", "Jorge", "Manuel4", "Miguel", "Alberto", "Javier", "Dani", "Jorge", "Manuel", "Miguel", "Alberto", "Javier", "Dani", "Jorge", "Manuel", "Miguel"]  # 3
+    ]
+diccionario= {'kg': 20, 'm': 1.8, 'color': 'rojo'}
+print(diccionario.get('kg'))
+
+lista.pop(1)
+lista[1].remove("Alberto")
+print(lista[1][4])
+
+
 nombre=input("Dime tu nombre: ")
 print("Hola mundo, " + nombre.upper() + " capullo")
 print("Hola mundo, " + nombre.lower() + " capullo")
@@ -20,11 +36,22 @@ else:
     print("Ah vaya")
 
 
-esHereje=input("¿Eres hereje? (Si/No): ").title()
+while True:
+    esHereje=input("¿Eres hereje? (Si/No): ").title()
 
-if esHereje == "Si":
-    print("Conviértete")
-elif esHereje == "No":
-    print("Bienaventurado")
-else:
-    print("No me has dicho ni si ni no, imbécil")
+    if esHereje == "Si":
+        print("Conviértete")
+        break
+    elif esHereje == "No":
+        print("Bienaventurado")
+        break
+    else:
+        print("No me has dicho ni si ni no, imbécil")
+
+
+
+for i in lista:
+    #if i == "Miguel":
+    #    print("Hola Don Miguel")
+    for e in i:
+        print("Iterador número " + str(e))
