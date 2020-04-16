@@ -25,6 +25,11 @@ ls -l   # Contenido en forma de listado
 ls -a   # Incluye en la salida del comando los archivos ocultos
 ls -la  # Combina los parámetros de listado y de archivos ocultos
 
+# COMANDOS DE SHELL/TERMINAL
+clear # Limpia la terminal
+exit # Sale de la sesión actual (si se ha iniciado sesión en un usuario saldrá de ésta, si no, cerrará la terminal)
+history # Muestra el histórico de comandos de ese usuario/sesión
+
 # ADMINISTRACIÓN
 su # Inicio de sesión de root en la shell
 sudo $comando # Llama al comando con privilegios de administrador
@@ -39,3 +44,11 @@ shutdown -r now # Reinicia el ordenador inmediatamente
 shutdown -r +1 "El sistema se apagará" # Programación de reinicio en un minuto con mensaje
 shutdown -c # Cancela todas las programaciones de shutdown
 halt # Apagado de sistema del tipo "detención". Detiene todas las funciones de la CPU pero mantiene encendido el PC (útil para realizar mantenimientos de bajo nivel)
+
+# METACOMANDOS
+whatis $comando # (¿qué es?) muestra ayuda sobre un comando desconocido
+man $comando    # Muestra el manual del comando pasado
+cmp
+comm
+diff
+cut
