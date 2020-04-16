@@ -31,3 +31,11 @@ sudo $comando # Llama al comando con privilegios de administrador
 sudo su # Accede al usuario root mediante sudo, es decir, sin indicar la contraseña de root sino la del usuario que está en sudoers
 passwd # Cambia la clave del usuario iniciado en la shell
 passwd $usuario # Cambia la clave del usuario pasado (hay que tener permisos sobre ese usuario para ello)
+poweroff # Apaga el sistema
+reboot # Reinicia el sistema
+shutdown now # Apaga el ordenador inmediatamente (shutdown envía señal al demonio init para indicarle el apagado)
+shutdown 14:30 # Programa apagado para las 14:30
+shutdown -r now # Reinicia el ordenador inmediatamente
+shutdown -r +1 "El sistema se apagará" # Programación de reinicio en un minuto con mensaje
+shutdown -c # Cancela todas las programaciones de shutdown
+halt # Apagado de sistema del tipo "detención". Detiene todas las funciones de la CPU pero mantiene encendido el PC (útil para realizar mantenimientos de bajo nivel)
