@@ -76,15 +76,30 @@ SELECT * FROM Personas WHERE nombre NOT BETWEEN "Alberto" AND "Manuel" ORDER BY 
 SELECT * FROM Personas WHERE fechanac BETWEEN #01/07/2020# AND #31/07/2020#; /* Muestra las personas cuya fecha de nacimiento esta entre... */
 SELECT idpersona AS Id, edad AS Ed FROM Personas; /* Crear alias para las columnas idpersona y edad */
 
-/* Relaciones 0:N / 1:N */
-alter table
+/* Relaciones 0:N / 1:N (uno a muchos) */
+ALTER TABLE
   Personas
-add
+ADD
   (
     Ordenador int(5),
-    foreign key(Ordenador) references Ordenadores(idordenador)
+    FOREIGN KEY(Ordenador) REFERENCES Ordenadores(idordenador)
   );
+  
+/* Relaciones N:M (muchos a muchos) */
 
+/* PENDIENTE: create table nm */
+
+SELECT * 
+FROM Personas p, Persona_Telefono pt, Telefonos t 
+WHERE p.idpersonal = pt.idpersonas AND t.idtelefono = pt.idtelefono;
+
+SELECT * 
+FROM Personas p 
+JOIN Persona_Telefono pt ON p.idpersonal = pt.idpersonas 
+JOIN Telefonos t ON pt.idtelefono = t.idtelefono;
+
+
+/* PENDIENTE: Backup */
 BACKUP DATABASE Prueba TO DISK = 'Ubicacion destino'; /* Backup de la base de datos */
 BACKUP DATABASE Prueba TO DISK = 'Ubicacion destino' WITH DIFFERENTIAL; /* Backup de las partes que han cambiado desde el ultimo backup de la base de datos */
 
