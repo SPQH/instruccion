@@ -1,0 +1,214 @@
+\documentclass[a4paper, 11pt, titlepage]{article}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{imakeidx}
+\usepackage{makeidx}
+\usepackage{mathtools}
+\usepackage[spanish]{babel}
+\usepackage{eurosym}
+
+% CODE C
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{textblue}{rgb}{.2,.2,.7}
+\definecolor{textred}{rgb}{0.54,0,0}
+\definecolor{textgreen}{rgb}{0,0.43,0}
+\lstset{language=C, 
+numbers=left, 
+numberstyle=\tiny, 
+stepnumber=1,
+numbersep=5pt, 
+tabsize=4,
+basicstyle=\ttfamily,
+keywordstyle=\color{textblue},
+commentstyle=\color{textred},   
+stringstyle=\color{textgreen},
+frame=none,                    
+columns=fullflexible,
+keepspaces=true,
+xleftmargin=\parindent,
+showstringspaces=false}
+
+\newcommand{\nombreEmpresa}{iFlor }
+\newcommand{\alberto}[2]{``#1'' (#2)}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace{1cm}
+    {\bfseries\LARGE Universidad Católica de Ávila \par}
+    \vspace{1cm}
+    {\scshape\Large Facultad de Ciencias \par}
+    \vspace{3cm}
+    {\scshape\Huge Estructuras de Datos (Programación C) \par}
+    \vspace{3cm}
+    {\itshape\Large Trabajo Obligatorio \par}
+    \vfill
+    {\Large Francisco Javier Balón Aguilar \par}
+    \vfill
+    {\Large 2019/2020 \par}
+\end{titlepage}
+
+
+\renewcommand{\contentsname}{Índice}
+\tableofcontents
+\newpage
+
+\section{Estructuras de datos estáticas}
+
+Hola, esta es la empre3sa \nombreEmpresa Hola, esta es la empre3sa \nombreEmpresa Hola, esta es la empre3sa \nombreEmpresa
+
+jasjsahsadh \alberto{HOLA ESTOY ENTRE COMILLAS}{HOLA ESTOY ENTRE PARENTESIS}
+
+Una \textbf{estructura de datos estática} es aquella en la que el tamaño ocupado en memoria se
+establece antes de que el programa se ejecute y no puede modificarse dicho tamaño durante
+la ejecución del programa. En otras palabras, su tamaño será el mismo durante toda la ejecución
+del programa.
+
+Estas estructuras están implementadas en la mayor parte de los lenguajes de alto nivel. ofreciendo
+tipos de datos predefinidos para que el programador las cree.
+
+    \begin{lstlisting}
+    // Vector de 20 elementos de tipo real
+    hola = "HOLA"
+    float elementos[20];
+
+    // Declaracion de variables de tipo estructura
+    Struct Alumno
+    {
+        char nombre[50];
+        char apellidos[150];
+        short edad;
+        int numero_alumno;
+    }
+    \end{lstlisting}
+
+\section{Estructuras de datos dinámicas}
+
+Las \textbf{estructuras de datos dinámicas} son aquellas que pueden disminuir o aumentar su 
+tamaño (en memoria que ocupan) en tiempo de ejecución, de forma que ocupan la memoria necesaria
+en cada momento.
+
+Los elementos que componen una estructura dinámica se denominan \textbf{nodos} y se enlazan unos
+con otros por medio de \textbf{punteros}.
+
+Atendiendo a su estructura pueden ser \textbf{lineales} (cada nodo referencia únicamente a 
+otro nodo; por ejemplo listas, pilas, colas...) y \textbf{no lineales} (cada nodo puede referenciar
+a más de un nodo; por ejemplo árboles, grafos...)
+
+\section{Punteros}
+
+Cada posición de memoria tiene asociada una dirección que la identifica de forma única, algo así
+como un identificador. Dentro de ellas se almacenan instrucciones y datos.
+
+Para que al programador le resulte más sencillo referirse a una dirección de memoria se utilizan
+las \textbf{variables}, que no son más que nombres asociados a direcciones de memoria.
+
+La variable de tipo \textbf{puntero} se utilizan para almacenar en ellas la dirección de memoria 
+de otra variable. El puntero, como variable que es tiene asociado su dirección de memoria y su contenido 
+será la dirección de memoria de otra variable (véase figura \ref{puntero}).
+
+
+
+Los punteros pueden apuntar a variables previamente declaradas o a variables dinámicas.
+
+    \begin{quote}
+        \small \textit{La potencia de los punteros reside en poder crear (reservar memoria) y 
+        destruir (liberar memoria) una variable (dinámica) en tiempo de ejecución}
+    \end{quote}
+
+Un puntero ocupa normalmente 4 bytes y se declara siempre de acuerdo con el tipo de dato al que apunta.
+
+    \begin{lstlisting}
+    // La declaracion de punteros en C se realiza 
+    // anteponiendo (*) al nombre de la variable.
+    int * x;
+    \end{lstlisting}
+
+    \subsection{Operadores de dirección e indirección}
+
+    El lenguaje C dispone de los operadores de \textbf{dirección} (\textit{$\&$}) e \textbf{indirección} 
+    (\textit{$*$}) permitiendo respectivamenta acceder a la dirección asociada a una determinada variable
+    y acceder al contenido de ésta (zona de memoria) a la que apunta el puntero.
+
+    \begin{lstlisting}
+    // Variables estaticas 'i' y 'j', puntero 'p'. 
+    int i, j, *p;
+    // El puntero 'p' apunta a 'i'; asignamos a la 
+    // variable 'p' la direccion de memoria de la 
+    // variable 'i'.
+    p = &i;
+    // Asignamos a la direccion de memoria a la que 
+    // apunta 'p' el valor '10'.
+    *p = 10;
+    // Cambiamos el puntero a la variable 'j' y le 
+    // asignamos dinamicamente un valor a esta.
+    p = &j;
+    *p = -2;
+    // Cambiamos el puntero de nuevo para que no 
+    // apunte a ninguna variable.
+    p = NULL;
+    \end{lstlisting}
+
+    Podemos trabajar con punteros de tipo indefinido con \textit{$void *$}, pudiendo asignarse cualquier
+    tipo de puntero y valor; es un puntero genérico a alguna parte donde se almacena información
+    de algún tipo. Es el programador el responsable de definir estos <<algún>> eliminando esta 
+    ambigüedad.
+
+    \begin{lstlisting}
+    int x = 1;
+    float r = 1.0;
+
+    void* ptr = &x;
+    *(int *)ptr = 2;
+
+    ptr = &r;
+    *(float *) ptr = 1.1;
+    \end{lstlisting}
+
+    \subsection{Aritmética de punteros}
+
+    Las operaciones aritméticas entre punteros en el lenguaje C se limitan a \textbf{suma}, 
+    \textbf{resta}, \textbf{comparación} y \textbf{asignación}.
+
+    Las operaciones aritméticas en los punteros a un tipo de dato $x$ tienen automáticamente en 
+    cuenta el tamaño que ocupa ese tipo de dato en memoria. Es decir, el número de \textit{bytes}
+    necesario para almacenar un objeto de ese tipo de dato: la suma incrementa la dirección a 
+    la que apunta el puntero teniendo en cuenta el tipo de dato que al que apunta el puntero (si 
+    un puntero apunta a un tipo de dato entero y se le suma 1, se desplaza el tamaño de un entero).
+    En el caso de la resta, se decrementa la dirección.
+
+    Estas dos operaciones son útiles cuando trabajamos con vectores o matrices (lineal) y la suma
+    o resta permitirían moverse entre los elementos de éste.
+
+    \begin{lstlisting}
+    int a, b, c;
+    int *p1, *p2;
+    void *p;
+
+    p1 = &a;
+    *p1 = 1;
+
+    p2 = &b;
+    *p2 = 2;
+
+    p1 = p2;
+    *p1 = 0;
+
+    p2 = &c;
+    *p2 = 3;
+
+    p = &p1;
+    *p = p2;
+    *p1 = 1;
+    \end{lstlisting}
+
+    \subsection{Vectores, matrices y punteros}
+
+    Un vector es un puntero al primer elemento del propio vector, contiene la dirección donde
+    se encuentra el primer elemento. Es un puntero constante y no puede modificarse su 
+    contenido, siendo la dirección que contiene a la que apunta.
+
+\end{document}

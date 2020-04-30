@@ -1,0 +1,80 @@
+\documentclass[a4paper, 11pt, titlepage, twocolumn]{book} 
+
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{graphicx}
+
+\title{\textit{Hola Mundo}}
+\author{Alberto Fraile}
+\date{24 de abril de 1998}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\chapter{El amanecer}
+\section{Introducción}
+
+\textbf{Lorem ipsum} \textit{dolor sit amet}, consectetuer 
+adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
+
+\begin{quote}
+    \small <<Hola, esta es una cita de alguien muy importante; Campanilla.laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad 
+    minim veniam, quis nostrud exerci tation ullamcorper suscipit 
+    lobortis nisl ut aliquip ex ea commodo consequat. Duis autem 
+    vel eum iriure dolor in hendrerit in vulputate>>
+\end{quote}
+
+
+\[ \gamma / \beta 2^3 = 4x + \mu \]
+
+\section{Introducción 2} \label{introduction2}
+
+\textbf{Lorem ipsum} \textit{dolor sit amet}, consectetuer 
+adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
+laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad 
+
+\[
+    \begin{pmatrix}
+        a*a_{11} & a*a_{12} & a*a_{13} \\ 
+        a*a_{21} & a*a_{22} & a*a_{23} \\
+        a*a_{31} & a*a_{32} & a*a_{33} \\
+    \end{pmatrix}  
+\]
+
+minim veniam, quis nostrud exerci tation ullamcorper suscipit 
+lobortis nisl ut aliquip ex ea commodo consequat. Duis autem. Véase Figura \ref{imagenGravedad}.
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.3\textwidth]{imagen.jpeg}
+    \caption{(Para más información: \ref{HOLA}) Imagen descriptiva del campo gravitatorio del planeta Tierra.}
+    \label{imagenGravedad}
+\end{figure}
+
+vubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo, insolens complectitur te eos, ea pri dico munere propriae. Vel ferri facilis ut, qui paulo ridens praesent ad. Possim alterum qui cu. Accusamus consulatu ius te, cu decore soleat appareat usu.
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{imagen.jpeg}
+    \caption{Imagen descriptiva del campo gravitatorio del planeta Tierra.}
+    \label{}
+\end{figure}
+
+\section{El Bosque Negro}
+
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{imagen.jpeg}
+    \caption{Imagen descriptiva del campo gravitatorio del planeta Tierra.}
+    \label{}
+\end{figure}
+
+ 
+
+\end{document}
