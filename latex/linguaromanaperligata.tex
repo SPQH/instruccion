@@ -1,0 +1,66 @@
+% INICIO DE DOCUMENTO
+\documentclass[a4paper, 11pt, titlepage]{article}
+
+% LIBRER?AS
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{imakeidx}
+\usepackage{makeidx}
+\usepackage{mathtools}
+\usepackage[spanish]{babel}
+\usepackage{eurosym}
+\usepackage{amssymb}
+
+% VARIABLES
+\newcommand{\nombre}{\emph{\textbf{Lingua::Romana::Perligata}}}
+
+% CABECERAS
+\title{\textbf{\nombre}\\ {\normalsize \textbf{Latin Perl Programming}}}
+\author{Francisco Javier Balón Aguilar}
+\date{2020}
+
+% -------------------------------------------------------------------------------------------------------------------------------------
+
+\begin{document} % INICIO DE DOCUMENTO
+
+\maketitle % Creaci?n y dibujado del t?tulo como portada de documento
+\renewcommand{\contentsname}{Índice} % Nombre dado al ?ndice
+\tableofcontents % Genera la tabla de contenidos del ?ndice autom?ticamente
+\newpage % Contin?a en una nueva p?gina el documento
+
+\section{$\mathfrak{nomen}$}
+
+Lingua::Romana::Perligata significa Perl en lengua romana (latín).
+
+\section{$\mathfrak{editio}$}
+
+This document describes version 0.601 of Lingua::Romana::Perligata released May 3, 2001.
+
+\section{$\mathfrak{summarium}$}
+
+\begin{verbatim}
+    use Lingua::Romana::Perligata;
+ 
+    adnota Illud Cribrum Eratothenis
+    
+    maximum tum val inquementum tum biguttam tum stadium egresso scribe.
+    da meo maximo vestibulo perlegementum.
+    
+    maximum comementum tum novumversum egresso scribe.
+    meis listis conscribementa II tum maximum da.
+    dum damentum nexto listis decapitamentum fac
+        sic
+            lista sic hoc tum nextum recidementum cis vannementa listis da.
+            dictum sic deinde cis tum biguttam tum stadium tum cum nextum
+            comementum tum novumversum scribe egresso.
+        cis
+\end{verbatim}
+
+\section{Bibliografía}
+
+https://metacpan.org/pod/Lingua::Romana::Perligata
+
+\end{document} % FIN DE DOCUMENTO

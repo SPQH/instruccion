@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "Hola $1, adiós $2"
