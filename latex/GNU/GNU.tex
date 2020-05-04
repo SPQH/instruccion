@@ -1,4 +1,4 @@
-\documentclass[a4paper, 11pt, titlepage]{report} 
+\documentclass[a4paper, 10pt, titlepage]{report} 
 
 \usepackage{hyperref}
 \usepackage[utf8]{inputenc}
@@ -42,12 +42,197 @@ showstringspaces=false}
 
 \chapter*{Introducción}
 \addcontentsline{toc}{chapter}{Introducción}
-\chapter{Terminal}
-\chapter{LaTeX}
+\chapter{Terminal GNU-Linux}
+\section{Navegar por los directorios} 
+\begin{verbatim}
+pwd
+\end{verbatim}
+<<Muestra la ruta en la que nos encontramos actualmente>>
+
+\begin{verbatim}
+ls  //  ls - l
+\end{verbatim}
+<<Lista el contenido de un directorio // Información adicional>>  
+
+\begin{verbatim}
+ls -a
+\end{verbatim}
+<<Lista el contenido de un directorio, incluidos archivos ocultos>>
+
+\begin{verbatim}
+cd // cd ..
+\end{verbatim}
+<<Nos lleva al directorio raiz // Subimos un nivel>> \
+
+
+\section{Examinar archivos} 
+
+\begin{verbatim}
+file
+\end{verbatim}
+<<Determina el tipo de un archivo>>
+
+\begin{verbatim}
+cat
+\end{verbatim}
+<<Muestra el contenido de un archivo>>
+
+\begin{verbatim}
+less
+\end{verbatim}
+<<Muestra el contenido de un archivo y lo pagina>> \
+
+\newpage
+
+\section{Manipulación de archivos y directorios}
+
+\begin{verbatim}
+mkdir
+\end{verbatim}    
+<<Crear un directorio>>
+
+
+\begin{verbatim}
+rmdir
+\end{verbatim}
+<<Elimina un directorio vacio>>
+
+\begin{verbatim}
+cp
+\end{verbatim}
+<<Copia un fichero o directorio>>
+
+\begin{verbatim}
+cp -r
+\end{verbatim}
+<<Copia un directorio con todo su contenido>>
+
+\begin{verbatim}
+mv
+\end{verbatim}
+<<Mueve o renombra un fichero>>
+
+\section{Información del sistema}
+\section{Administración}
+\section{Procesos}
+\section{Permisos}
+\section{Actualización}
+\section{Inicio y apagado}
+\section{Comandos de red}
+\section{Comandos de comandos}
+\chapter{Composición de textos. LaTeX}
+\section{Elementos y opciones de un documento}
+
+ \begin{verbatim}   
+
+
+ letterpaper
+ a4paper
+ a5paper
+ b5paper
+ legalpaper
+ executivepape
+
+ landscape
+
+ 10pt
+ 11pt
+ 12pt
+
+ oneside
+ twoside
+
+ titlepage
+ notitlepage
+
+ openright
+ openany
+ 
+ onecolumn
+ twocolumn
+\end{verbatim}   
+
+\newpage
+
+\section{Paquetes comunes}
+
+\begin{verbatim}
+
+\usepackage[<opciones>]{<paquete>}
+
+
+
+\end{verbatim}
+
+\newpage
+
+\section{Comandos comunes}
+
+\newpage
+
+\section{La portada del documento}
+
+\newpage
+
+\section{Creación y edición de tablas}
+
+\newpage
+
 \begin{section}{Estructura y desarrollo de un artículo}\end{section}
 
+\begin{lstlisting}
+    \documentclass[a4paper, 10pt, titlepage]{article}
+
+    \usepackage{hyperref}
+    \usepackage[utf8]{inputenc}
+    \usepackage[spanish]{babel}
+    \usepackage{graphicx}
+    
+    \title{Ejemplo}
+    \author{Ejempla Ejemplez}
+    \date{2020}
+    
+
+    \begin{document}
+
+    \maketitle
+    \tableofcontents
+    
+    \\ Nuevo parrafo
+
+    \section{Nombre} 
+    \section*{Sin Numeracion}
+
+    \subsection{Nombre} 
+    \subsection*{Sin Numeracion}
+
+    \subsubsection{Nombre}
+
+    \textbf{Negrita} \textit{Cursiva} \underline{Subrayado}
+    
+    \label{'Etiqueta'}
+    \ref{'Etiqueta'}
+
+    \begin{quote}
+        \small <<Ejemplo de cita>>
+    \end{quote}
+
+    \begin{figure}[htp]
+        \centering
+        \includegraphics[width=0.8\textwidth]{imagen.jpeg}
+        \caption{Descripcion de la fotografia}
+        \label{imagenejemplo}
+    \end{figure}
+
+    \end{document}
+\end{lstlisting}    
+
+\newpage
+
+\begin{section}{Estructura y desarrollo de un libro}\end{section}
+   
     \begin{lstlisting}
-        \documentclass[a4paper, 10pt, titlepage]{article}
+        \documentclass[a4paper, 10pt, titlepage]{book}
     
         \usepackage{hyperref}
         \usepackage[utf8]{inputenc}
@@ -66,37 +251,111 @@ showstringspaces=false}
         
         \\ Nuevo parrafo
     
+        \chapter{Nombre} 
+        \chapter*{Sin Numeracion}
+    
         \section{Nombre} 
         \section*{Sin Numeracion}
     
-        \subsection{Nombre} 
-        \subsection*{Sin Numeracion}
-    
-        \subsubsection{Nombre}
-    
-        \textbf{Negrita} \textit{Cursiva} \underline{Subrayado}
-        
         \label{'Etiqueta'}
         \ref{'Etiqueta'}
     
         \begin{quote}
             \small <<Ejemplo de cita>>
         \end{quote}
-    
+
         \begin{figure}[htp]
             \centering
             \includegraphics[width=0.8\textwidth]{imagen.jpeg}
             \caption{Descripcion de la fotografia}
             \label{imagenejemplo}
         \end{figure}
+
+        \end{document}\end{lstlisting}      
+        
+        \small<<Numeración a los costados. Los capítulos comienzan siempre en página impar.>>
+
+\newpage
+
+\section{Estructura y desarrollo de un reporte}
+
+\begin{lstlisting}
+    \documentclass[a4paper, 10pt, titlepage]{report}
+
+    \usepackage{hyperref}
+    \usepackage[utf8]{inputenc}
+    \usepackage[spanish]{babel}
+    \usepackage{graphicx}
     
-        \end{document}
-    \end{lstlisting}    
+    \title{Ejemplo}
+    \author{Ejempla Ejemplez}
+    \date{2020}
     
-    \newpage
+
+    \begin{document}
+
+    \maketitle
+    \tableofcontents
+    
+    \\ Nuevo parrafo
+
+    \chapter{Nombre} 
+    \chapter*{Sin Numeracion}
+
+    \section{Nombre} 
+    \section*{Sin Numeracion}
+
+    \label{'Etiqueta'}
+    \ref{'Etiqueta'}
+
+    \begin{quote}
+        \small <<Ejemplo de cita>>
+    \end{quote}
+
+    \begin{figure}[htp]
+        \centering
+        \includegraphics[width=0.8\textwidth]{imagen.jpeg}
+        \caption{Descripcion de la fotografia}
+        \label{imagenejemplo}
+    \end{figure}
+
+    \end{document}\end{lstlisting}      
+    
+    \small<<Los capítulos comienzan en página siguiente a la finalización del anterior .>>
+
+\newpage 
+
+\section{Estructura y desarrollo de una carta}
+
+\begin{lstlisting}
+
+    \documentclass{letter}
+    \usepackage{hyperref}
+    \signature{Marcelo Bielsa}
+    \address{Anfield Road 58 \\ Leeds \\ 58100 Leeds}
+    \begin{document}
+    
+    \begin{letter}{Director \\ Diario el Pais \\ Avenida de la Constitucion 10
+    \\ Sevilla \\ 41000 Sevilla}
+    \opening{Estimado Sr. Director:}
+    
+    Cuerpo de la carta
+    
+    \closing{Atentamente,}
+    
+    \ps
+    
+    P.S. Posdata
+    
+    \end{letter}
+    \end{document}    
+
+\end{lstlisting}
+    
+\newpage
 
 
-\chapter{Mariadb}
+\chapter{Bases de datos. Mariadb}
 \section{Acceso a Mariadb}
 
 \begin{verbatim}
@@ -351,12 +610,19 @@ JOIN Telefonos t ON pt.Idtelefono = t.Idtelefono;
 
 *** PENDIENTE ***
 
-\chapter{Python}
+\chapter{Programación. Python}
+\section{Comandos básicos}
 \chapter{Scripts}
 \chapter{Redes}
-\chapter{Seguridad}
+\chapter{Seguridad informática}
+\section{Navegador web}
 \chapter{Cifrado}
+\section{Criptografía. Técnicas de cifrado}
+\section{El protocolo SSH}
 \chapter{Raspberry Pi}
+\section{Hardware. Características y posibilidades}
+\section{Proyectos}
+\subsection{Cluster}
 
 
 \end{document}

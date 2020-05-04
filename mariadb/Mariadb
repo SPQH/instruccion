@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS Personas (
+    id INT(11) NOT NULL AUTO_INCREMENT UNIQUE,
+    nombre VARCHAR(20) NOT NULL,
+    annoNacimiento INT,
+    estatura INT,
+    peso INT, 
+    procedencia VARCHAR(200),
+    PRIMARY KEY (id));
+
+
+
+INSERT INTO Personas(nombre, annoNacimiento, estatura, peso, procedencia) values ('Alberto', 1991, 1.90, 60, 'Sevilla');
+INSERT INTO Personas(nombre, annoNacimiento, estatura, peso, procedencia) values ('Javier', 1994, 1.90, 60, 'Sevilla');
+INSERT INTO Personas(nombre, annoNacimiento, estatura, peso, procedencia) values ('Daniel', 1991, 1.90, 60, 'Sevilla');
+INSERT INTO Personas(nombre, annoNacimiento, estatura, peso, procedencia) values ('Jorge', 1991, 1.50, 10, 'Sevilla');
+
+SELECT *
+FROM Personas
+WHERE id = 1
+
